@@ -47,6 +47,27 @@ class ball {
   }
 }
 
+class Heading {
+  constructor(targetelement) {
+    this.head = targetelement;
+    this.x = 0;
+    this.y = 0;
+  }
+  get_current_y_coordinate() {
+    return this.y;
+  }
+  get_current_x_coordinate() {
+    return this.x;
+  }
+  set_x_coordinate(final_x) {
+    this.x = final_x;
+    this.head.style.left = final_x;
+  }
+  set_y_coordinate(final_y) {
+    this.y = final_y;
+    this.head.style.top = final_y;
+  }
+}
 var w = window.innerWidth;
 var h = window.innerHeight;
 var rodlen = Math.floor((20 * w) / 100);
@@ -54,18 +75,23 @@ let r1 = document.querySelector(".rod1");
 let r2 = document.querySelector(".rod2");
 let b = document.querySelector(".ball");
 
+let heading = document.querySelector(".heading");
+
 let player1 = new Player(r1);
 let player2 = new Player(r2);
 
 let stone = new ball(b);
+let head = new Heading(heading);
 
-function initialise_game(p1, p2, o) {
+function initialise_game(p1, p2, o, head) {
   console.log(h, w);
   p1.set_x_coordinate(0);
   p2.set_x_coordinate(0);
   p1.set_y_coordinate(20);
   p2.set_y_coordinate(h - 50);
   o.set_coordinates(w / 2, h / 2);
+  head.set_x_coordinate(0);
+  head.set_y_coordinate(h / 2);
   return;
 }
 document.addEventListener("keypress", function (event) {
@@ -107,7 +133,7 @@ document.addEventListener("keypress", function (event) {
   }
 });
 
-initialise_game(player1, player2, stone);
+initialise_game(player1, player2, stone, head);
 
 // console.log(player1.get_current_x_coordinate());
 // console.log(player2.get_current_x_coordinate());
@@ -121,6 +147,8 @@ interval = setInterval(() => {
   let player2_x = player2.get_current_x_coordinate();
   let player1_y = player1.get_current_y_coordinate() + 30;
   let player2_y = player2.get_current_y_coordinate();
+  let head_x = head.get_current_x_coordinate();
+  console.log(head_x);
   console.log(ball_x, ball_y, player1_x, player1_y, player2_x, player2_y);
   if (ball_y <= player1_y - 15) {
     if (ball_x < player1_x || ball_x > player1_x + rodlen) {
@@ -161,6 +189,8 @@ interval = setInterval(() => {
   }
   ball_x += ballspeedx;
   ball_y += ballspeedy;
+  head_x += 1;
+  head.set_x_coordinate(head_x);
   stone.set_coordinates(ball_x, ball_y);
 }, 10);
 

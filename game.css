@@ -1,35 +1,48 @@
-.rod1
-{
-    width: 20%;
-    height: 30px;
-    background-color: green;
-    position: absolute;
-    border:yellow solid 0.2em;
-    border-radius: 0.5em;
-    color: white;
-    font-size: x-large;
-    font-family: sans-serif;
-    text-align: center;
+.rod1 {
+  width: 20%;
+  height: 30px;
+  background-color: green;
+  position: absolute;
+  border: yellow solid 0.2em;
+  border-radius: 0.5em;
+  color: white;
+  font-size: x-large;
+  font-family: sans-serif;
+  text-align: center;
 }
-.rod2
-{
-    width: 20%;
-    height: 30px;
-    background-color: darkblue;
-    position: absolute;
-    border:rgb(255, 134, 64) solid 0.2em;
-    border-radius: 0.5em;
-    color: white;
-    font-size: x-large;
-    font-family: sans-serif;
-    text-align: center;
+.rod2 {
+  width: 20%;
+  height: 30px;
+  background-color: darkblue;
+  position: absolute;
+  border: rgb(255, 134, 64) solid 0.2em;
+  border-radius: 0.5em;
+  color: white;
+  font-size: x-large;
+  font-family: sans-serif;
+  text-align: center;
 }
-.ball
-{
-    position:absolute;
-    width: 40px;
-    height: 40px;
-    border: solid;
-    background-color: red;
-    border-radius: 50%;
+.ball {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: solid;
+  background-color: red;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://www.cnet.com/a/img/ZmSPa3PgKqFu5glIZVsSnnrLPP8=/1200x675/2021/09/28/36a192be-5c62-44b2-9da2-b932e2df1e16/squid-game-rlgl-social-crop.jpg");
+  background-size: cover;
+}
+
+.heading {
+  position: absolute;
+  top: 45%;
+  font-size: 4em;
+  font-family: sans-serif;
+  font-weight: 900;
+  color: rgb(233, 230, 78);
+  opacity: 0.7;
 }
