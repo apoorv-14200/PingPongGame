@@ -1,0 +1,35 @@
+.rod1
+{
+    width: 20%;
+    height: 30px;
+    background-color: green;
+    position: absolute;
+    border:yellow solid 0.2em;
+    border-radius: 0.5em;
+    color: white;
+    font-size: x-large;
+    font-family: sans-serif;
+    text-align: center;
+}
+.rod2
+{
+    width: 20%;
+    height: 30px;
+    background-color: darkblue;
+    position: absolute;
+    border:rgb(255, 134, 64) solid 0.2em;
+    border-radius: 0.5em;
+    color: white;
+    font-size: x-large;
+    font-family: sans-serif;
+    text-align: center;
+}
+.ball
+{
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    border: solid;
+    background-color: red;
+    border-radius: 50%;
+}
