@@ -190,6 +190,7 @@ interval = setInterval(() => {
   ball_x += ballspeedx;
   ball_y += ballspeedy;
   head_x += 1;
+  head_x %= w;
   head.set_x_coordinate(head_x);
   stone.set_coordinates(ball_x, ball_y);
 }, 10);
